@@ -1,0 +1,536 @@
+/* Bierdeckel-Website · Stylesheet
+   Farben der Fahrzeuge kommen als --car-* Variablen aus den Daten (am <body>). */
+
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/archivo-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/archivo-latin-ext.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+010C-010D, U+011A-011B, U+0158-0159, U+0160-0161, U+017D-017E;
+}
+
+/* ---------- Tokens ---------- */
+
+:root {
+  --ink: #221f1f;
+  --paper: #ffffff;
+  --mist: #f1f1ef;
+  --stone: #6b6866;
+
+  --text: var(--ink);
+  --text-soft: var(--stone);
+  --surface: var(--paper);
+  --surface-alt: var(--mist);
+  --rule: #dcdad6;
+
+  --font-body: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Archivo", "Arial Narrow", "Roboto Condensed", sans-serif;
+
+  --gutter: clamp(16px, 5vw, 32px);
+  --measure: 40rem;
+  --space-section: clamp(44px, 11vw, 80px);
+  --radius-deckel: 16px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #f1f1ef;
+    --text-soft: #aba6a1;
+    --surface: #161414;
+    --surface-alt: #1e1b1b;
+    --rule: #383333;
+    color-scheme: dark;
+  }
+}
+
+/* Linienfarbe für Akzente auf neutralem Grund: dunkle Fahrzeuge nutzen im Dunkelmodus ihre Akzentfarbe */
+body {
+  --car-line: var(--car-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  body[data-scheme="dark"] {
+    --car-line: var(--car-accent);
+  }
+}
+
+/* ---------- Grundlagen ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-stretch: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+p,
+dl,
+dd,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.18em;
+}
+
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.icon {
+  flex: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -80px;
+  z-index: 10;
+  padding: 10px 14px;
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.skip:focus {
+  top: 12px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-stretch: 62%;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 9.5vw, 3.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+/* schmale Schnitte brauchen etwas mehr Luft zwischen den Wörtern */
+.section-title,
+.hero__title,
+.hero__claim,
+.legal__title,
+.about__closing {
+  word-spacing: 0.08em;
+}
+
+.note {
+  margin-top: 16px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+/* ---------- Fahrzeugseite: Kopfbereich ---------- */
+
+.hero {
+  background: var(--car-bg);
+  color: var(--car-fg);
+  padding: max(clamp(48px, 14vw, 104px), env(safe-area-inset-top)) var(--gutter) clamp(40px, 11vw, 72px);
+}
+
+.hero__text {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+.hero__title {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-stretch: 62%;
+  font-weight: 800;
+  font-size: clamp(4.5rem, 22vw, 10rem);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+}
+
+.accent {
+  color: var(--car-accent);
+}
+
+.hero__brand {
+  margin: 0;
+  font-family: var(--font-display);
+  font-stretch: 87.5%;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--car-accent);
+}
+
+body[data-scheme="light"] .hero__brand {
+  color: var(--car-fg);
+}
+
+.hero__claim {
+  margin-top: 14px;
+  font-family: var(--font-display);
+  font-stretch: 75%;
+  font-weight: 600;
+  font-size: clamp(1.3rem, 5.6vw, 1.9rem);
+  line-height: 1.15;
+  color: var(--car-fg);
+}
+
+/* ---------- Deckel-Karte ---------- */
+
+.facts {
+  background: var(--surface-alt);
+  padding: var(--space-section) var(--gutter);
+  /* der schräg liegende Deckel darf keinen seitlichen Scrollbalken erzeugen */
+  overflow: hidden;
+}
+
+.facts__inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+.deckel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 400px);
+  aspect-ratio: 1;
+  margin: 28px auto 0;
+  padding: 18px 16px 14px;
+  background: var(--car-bg);
+  color: var(--car-fg);
+  border-radius: var(--radius-deckel);
+  box-shadow:
+    0 1px 1px rgba(34, 31, 31, 0.08),
+    0 14px 28px -14px rgba(34, 31, 31, 0.45);
+  transform: rotate(-1.5deg);
+}
+
+/* gedruckter Innenrahmen wie auf einem echten Bierdeckel */
+.deckel::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid color-mix(in srgb, var(--car-fg) 20%, transparent);
+  border-radius: calc(var(--radius-deckel) - 7px);
+  pointer-events: none;
+}
+
+.deckel__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 8px 8px;
+  font-family: var(--font-display);
+  font-stretch: 87.5%;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--car-muted);
+}
+
+.deckel__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.deckel__cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 0;
+  padding: 10px 10px 12px;
+  border-color: color-mix(in srgb, var(--car-fg) 22%, transparent);
+  border-style: solid;
+  border-width: 0;
+}
+
+.deckel__cell:nth-child(odd) {
+  border-right-width: 1px;
+}
+
+.deckel__cell:nth-child(-n + 2) {
+  border-bottom-width: 1px;
+}
+
+.deckel__cell dt {
+  order: 2;
+  margin-top: 6px;
+  font-stretch: 87.5%;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 1.25;
+}
+
+.deckel__cell dd {
+  order: 1;
+}
+
+.deckel__pre {
+  display: block;
+  min-height: 1.3em;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--car-muted);
+}
+
+.deckel__figure {
+  display: flex;
+  align-items: baseline;
+  gap: 0.18em;
+  color: var(--car-accent);
+  font-family: var(--font-display);
+  line-height: 0.9;
+}
+
+.deckel__value {
+  font-stretch: 62%;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 14vw, 4.25rem);
+  letter-spacing: -0.01em;
+  font-variant-numeric: lining-nums;
+}
+
+.deckel__unit {
+  font-stretch: 75%;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 5vw, 1.5rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  .deckel {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14);
+  }
+}
+
+/* Der eine Bewegungsmoment: der Deckel landet auf dem Tisch */
+@keyframes deckel-land {
+  0% {
+    opacity: 0;
+    transform: translateY(-36px) rotate(-10deg) scale(1.05);
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-1.5deg);
+  }
+}
+
+.js .deckel {
+  opacity: 0;
+}
+
+.js .deckel.is-landed {
+  animation: deckel-land 480ms cubic-bezier(0.3, 1.3, 0.55, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .deckel {
+    opacity: 1;
+  }
+
+  .js .deckel.is-landed {
+    animation: none;
+  }
+}
+
+/* ---------- Beschreibung & technische Daten ---------- */
+
+.about,
+.specs {
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: var(--space-section) var(--gutter) 0;
+}
+
+.specs {
+  padding-bottom: var(--space-section);
+}
+
+.about__text {
+  margin-top: 20px;
+}
+
+.about__text p + p {
+  margin-top: 1em;
+}
+
+.about__text strong {
+  font-weight: 700;
+}
+
+.about__text .about__closing {
+  margin-top: 28px;
+  padding-left: 16px;
+  border-left: 5px solid var(--car-line);
+  font-family: var(--font-display);
+  font-stretch: 75%;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 6vw, 1.85rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.spec-list {
+  margin-top: 20px;
+  border-top: 2px solid var(--text);
+}
+
+.spec-list > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.spec-list dt {
+  flex: none;
+  max-width: 50%;
+  color: var(--text-soft);
+}
+
+.spec-list dd {
+  font-weight: 650;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Fuß ---------- */
+
+.footer {
+  background: var(--car-bg);
+  color: var(--car-fg);
+  padding: 20px var(--gutter) max(20px, env(safe-area-inset-bottom));
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  max-width: var(--measure);
+  margin: 0 auto;
+  font-size: 0.9375rem;
+}
+
+.footer__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* ---------- Rechtliche Seiten ---------- */
+
+.legal {
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: clamp(36px, 10vw, 64px) var(--gutter) var(--space-section);
+}
+
+.legal__title {
+  font-family: var(--font-display);
+  font-stretch: 62%;
+  font-weight: 800;
+  font-size: clamp(2.75rem, 13vw, 4.5rem);
+  line-height: 0.95;
+}
+
+.legal h2 {
+  margin-top: 32px;
+  font-family: var(--font-display);
+  font-stretch: 75%;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+.legal p {
+  margin-top: 8px;
+}
+
+.legal .draft {
+  margin-top: 20px;
+  padding: 12px 14px;
+  background: #fff7b3;
+  color: var(--ink);
+  border-radius: 8px;
+}
+
+.legal mark {
+  background: #fff7b3;
+  color: var(--ink);
+}
+
+.legal__list {
+  margin-top: 12px;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
+.legal__list li + li {
+  margin-top: 6px;
+}

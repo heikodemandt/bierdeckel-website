@@ -1,0 +1,10 @@
+# wird beim Veröffentlichen automatisch neu gebaut
+dist/
+node_modules/
+
+# bleibt nur lokal: Original-Fotos (groß, Bildrechte ungeklärt) und interne Planung
+src/img/originals/
+PLANUNG.md
+
+# lokale Werkzeug-Einstellungen
+.claude/

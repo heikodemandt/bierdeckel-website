@@ -1,0 +1,10 @@
+{
+  "name": "bierdeckel-website",
+  "private": true,
+  "description": "Statische Fahrzeugseiten für QR-Codes auf Bierdeckeln (Studio Wanderer)",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "python -m http.server 4173 --directory dist"
+  }
+}

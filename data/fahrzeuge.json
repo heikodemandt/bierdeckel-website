@@ -1,0 +1,246 @@
+{
+  "cars": [
+    {
+      "slug": "id-polo",
+      "qr": "polo",
+      "brand": "Volkswagen",
+      "model": "ID. Polo",
+      "claim": "Elektrisch in die Zukunft",
+      "theme": {
+        "bg": "#221F1F",
+        "fg": "#FFFFFF",
+        "accent": "#FFF200",
+        "muted": "#C9C4BE",
+        "scheme": "dark"
+      },
+      "facts": [
+        {
+          "key": "range",
+          "pre": "bis zu",
+          "value": "454",
+          "unit": "km",
+          "label": "Reichweite (WLTP)"
+        },
+        {
+          "key": "power",
+          "pre": "bis zu",
+          "value": "211",
+          "unit": "PS",
+          "label": "Leistung"
+        },
+        {
+          "key": "accel",
+          "pre": "",
+          "value": "7,1",
+          "unit": "s",
+          "label": "0–100 km/h"
+        },
+        {
+          "key": "charge",
+          "pre": "bis zu",
+          "value": "105",
+          "unit": "kW",
+          "label": "Schnellladen (DC)"
+        }
+      ],
+      "text": [
+        "Der vollelektrische ID. Polo verbindet kompakte Abmessungen mit moderner Elektromobilität. Mit bis zu <strong>211 PS (155 kW)</strong> erreicht er eine Reichweite von bis zu <strong>454 km (WLTP)</strong>. Die Batterie bietet bis zu <strong>52 kWh netto</strong> und kann mit bis zu <strong>105 kW DC</strong> schnellgeladen werden. Der Ladevorgang von 10 auf 80 Prozent dauert rund <strong>24 Minuten</strong>.",
+        "In der leistungsstärksten Version beschleunigt der ID. Polo in <strong>7,1 Sekunden von 0 auf 100 km/h</strong> und erreicht eine Höchstgeschwindigkeit von <strong>160 km/h</strong>. Der Kofferraum bietet <strong>441 Liter</strong> Volumen."
+      ],
+      "closing": "Kompakt, effizient und vollelektrisch – ein Polo für die neue Generation.",
+      "specs": [
+        [
+          "Leistung",
+          "bis zu 211 PS (155 kW)"
+        ],
+        [
+          "Reichweite",
+          "bis zu 454 km (WLTP)"
+        ],
+        [
+          "Batterie",
+          "bis zu 52 kWh netto"
+        ],
+        [
+          "Schnellladen",
+          "bis zu 105 kW DC"
+        ],
+        [
+          "Laden 10–80 %",
+          "ca. 24 Min."
+        ],
+        [
+          "0–100 km/h",
+          "7,1 Sek."
+        ],
+        [
+          "Höchstgeschwindigkeit",
+          "160 km/h"
+        ],
+        [
+          "Kofferraum",
+          "441 Liter"
+        ]
+      ]
+    },
+    {
+      "slug": "a2-e-tron",
+      "qr": "a2",
+      "brand": "Audi",
+      "model": "A2 e-tron",
+      "modelAccent": "e-tron",
+      "claim": "Kompakt. Elektrisch. Audi.",
+      "theme": {
+        "bg": "#BBBDBF",
+        "fg": "#221F1F",
+        "accent": "#006391",
+        "muted": "#3F3C3B",
+        "scheme": "light"
+      },
+      "facts": [
+        {
+          "key": "range",
+          "pre": "bis zu",
+          "value": "646",
+          "unit": "km",
+          "label": "Reichweite (WLTP)"
+        },
+        {
+          "key": "power",
+          "pre": "bis zu",
+          "value": "326",
+          "unit": "PS",
+          "label": "Leistung"
+        },
+        {
+          "key": "accel",
+          "pre": "",
+          "value": "5,7",
+          "unit": "s",
+          "label": "0–100 km/h"
+        },
+        {
+          "key": "charge",
+          "pre": "bis zu",
+          "value": "170",
+          "unit": "kW",
+          "label": "Schnellladen (DC)"
+        }
+      ],
+      "text": [
+        "Der vollelektrische Audi A2 e-tron verbindet kompakte Abmessungen mit hoher Reichweite und starker Leistung. Mit bis zu <strong>326 PS (240 kW)</strong> erreicht er eine Reichweite von bis zu <strong>646 km (WLTP)</strong>. Die Beschleunigung von 0 auf 100 km/h erfolgt in nur <strong>5,7 Sekunden</strong>.",
+        "Der Stromverbrauch beginnt bei <strong>12,8 kWh/100 km</strong>. An einer geeigneten Schnellladestation kann mit bis zu <strong>170 kW DC</strong> geladen werden. Unter optimalen Bedingungen lassen sich in rund <strong>10 Minuten bis zu 210 km Reichweite</strong> nachladen. Die Anhängelast beträgt bis zu <strong>1.600 kg</strong>."
+      ],
+      "closing": "",
+      "specs": [
+        [
+          "Leistung",
+          "bis zu 326 PS (240 kW)"
+        ],
+        [
+          "Reichweite",
+          "bis zu 646 km (WLTP)"
+        ],
+        [
+          "0–100 km/h",
+          "5,7 Sek."
+        ],
+        [
+          "Stromverbrauch",
+          "ab 12,8 kWh/100 km"
+        ],
+        [
+          "Schnellladen",
+          "bis zu 170 kW DC"
+        ],
+        [
+          "Nachladen",
+          "bis zu 210 km in ca. 10 Min."
+        ],
+        [
+          "Anhängelast",
+          "bis zu 1.600 kg"
+        ]
+      ]
+    },
+    {
+      "slug": "enyaq",
+      "qr": "enyaq",
+      "brand": "Škoda",
+      "model": "Enyaq",
+      "claim": "Elektrisch reisen mit viel Platz",
+      "theme": {
+        "bg": "#6AA77D",
+        "fg": "#221F1F",
+        "accent": "#221F1F",
+        "muted": "#1C2E22",
+        "scheme": "light"
+      },
+      "facts": [
+        {
+          "key": "battery",
+          "pre": "bis zu",
+          "value": "77",
+          "unit": "kWh",
+          "label": "Batterie (netto)"
+        },
+        {
+          "key": "power",
+          "pre": "bis zu",
+          "value": "286",
+          "unit": "PS",
+          "label": "Leistung"
+        },
+        {
+          "key": "accel",
+          "pre": "ab ca.",
+          "value": "6,6",
+          "unit": "s",
+          "label": "0–100 km/h"
+        },
+        {
+          "key": "charge",
+          "pre": "bis zu",
+          "value": "175",
+          "unit": "kW",
+          "label": "Schnellladen (DC)"
+        }
+      ],
+      "text": [
+        "Der vollelektrische Škoda Enyaq verbindet großzügigen Raumkomfort mit moderner Elektrotechnik und hoher Alltagstauglichkeit. Mit bis zu <strong>286 PS (210 kW)</strong> bietet er kraftvolle Fahrleistungen. Die Batterie verfügt über bis zu <strong>77 kWh netto bzw. 82 kWh brutto</strong>.",
+        "Der Enyaq beschleunigt je nach Variante in etwa <strong>6,6 Sekunden von 0 auf 100 km/h</strong> und erreicht eine Höchstgeschwindigkeit von bis zu <strong>180 km/h</strong>. Schnellladen ist mit bis zu <strong>175 kW DC</strong> möglich. Der Stromverbrauch beginnt bei etwa <strong>14,9 kWh/100 km</strong>. Je nach Modell ist der Enyaq mit <strong>Hinterrad- oder Allradantrieb</strong> erhältlich."
+      ],
+      "closing": "Viel Raum, moderne Elektrotechnik und hoher Reisekomfort – für Alltag und längere Strecken.",
+      "specs": [
+        [
+          "Leistung",
+          "bis zu 286 PS (210 kW)"
+        ],
+        [
+          "Batterie",
+          "bis zu 77 kWh netto / 82 kWh brutto"
+        ],
+        [
+          "0–100 km/h",
+          "ab ca. 6,6 Sek."
+        ],
+        [
+          "Höchstgeschwindigkeit",
+          "bis zu 180 km/h"
+        ],
+        [
+          "Schnellladen",
+          "bis zu 175 kW DC"
+        ],
+        [
+          "Stromverbrauch",
+          "ab ca. 14,9 kWh/100 km"
+        ],
+        [
+          "Antrieb",
+          "Hinterrad- oder Allradantrieb"
+        ]
+      ]
+    }
+  ]
+}
