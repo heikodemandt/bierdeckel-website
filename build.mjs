@@ -93,7 +93,7 @@ function carPage(car) {
 
 <section class="facts" aria-labelledby="kennzahlen">
   <div class="facts__inner">
-    <h2 id="kennzahlen" class="section-title">Passt auf einen Bierdeckel.</h2>
+    <h2 id="kennzahlen" class="section-title">Auf einen Blick</h2>
     <div class="deckel" data-deckel>
       <p class="deckel__head" aria-hidden="true"><span>${esc(car.model)}</span><span>${esc(car.brand)}</span></p>
       <dl class="deckel__grid">
