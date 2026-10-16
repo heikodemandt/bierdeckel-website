@@ -1,0 +1,10 @@
+// Cloudflare-Konfiguration: liefert den fertig gebauten Ordner dist/ als statische Website aus.
+// Build-Befehl im Cloudflare-Dashboard: npm run build
+{
+  "name": "bierdeckel-website",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

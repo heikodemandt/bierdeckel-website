@@ -8,3 +8,6 @@ PLANUNG.md
 
 # lokale Werkzeug-Einstellungen
 .claude/
+
+# Cloudflare-Werkzeug (lokal)
+.wrangler/
