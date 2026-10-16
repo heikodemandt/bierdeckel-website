@@ -175,16 +175,20 @@ function impressum(site) {
 
 function datenschutz(site) {
   const o = site.operator;
-  const hosting = site.hosting
-    ? esc(site.hosting)
-    : `<mark>[Hosting-Anbieter mit Anschrift wird ergänzt]</mark>`;
+  const h = site.hosting;
+  const draft = h
+    ? ""
+    : `<p class="draft"><strong>Entwurf.</strong> Der Abschnitt zum Hosting wird ergänzt, sobald der Anbieter feststeht. Vor der Veröffentlichung bitte rechtlich prüfen lassen.</p>\n  `;
+  const hostingText = h
+    ? `<p>Diese Website wird bei ${esc(h.name)}, ${esc(h.address)} („Cloudflare“) bereitgestellt. Beim Aufruf einer Seite übermittelt Ihr Browser automatisch Informationen, die Cloudflare verarbeitet: IP-Adresse, Datum und Uhrzeit des Abrufs, aufgerufene Seite, Browser und Betriebssystem sowie die zuvor besuchte Seite. Cloudflare nutzt diese Daten auch, um die Website vor Angriffen und Missbrauch zu schützen. Die Verarbeitung erfolgt, um die Website sicher und stabil bereitzustellen (Art. 6 Abs. 1 lit. f DSGVO). Die Daten werden nicht mit anderen Daten zusammengeführt.</p>
+  <p>Dabei können Daten in die USA übermittelt werden. Cloudflare ist nach dem EU-US Data Privacy Framework zertifiziert, für das ein Angemessenheitsbeschluss der EU-Kommission besteht (Art. 45 DSGVO). Mit Cloudflare besteht ein Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO). Weitere Informationen: <a href="${esc(h.privacyUrl)}">Datenschutzerklärung von Cloudflare</a>.</p>`
+    : `<p>Diese Website wird bei <mark>[Hosting-Anbieter mit Anschrift wird ergänzt]</mark> betrieben. Beim Aufruf einer Seite übermittelt Ihr Browser automatisch Informationen, die der Server in Logdateien speichert: IP-Adresse, Datum und Uhrzeit des Abrufs, aufgerufene Seite, Browser und Betriebssystem sowie die zuvor besuchte Seite. Diese Daten werden nur verarbeitet, um die Website sicher und stabil bereitzustellen (Art. 6 Abs. 1 lit. f DSGVO), und nicht mit anderen Daten zusammengeführt.</p>`;
   return legalPage({
     title: "Datenschutz",
-    body: `<p class="draft"><strong>Entwurf.</strong> Der Abschnitt zum Hosting wird ergänzt, sobald der Anbieter feststeht. Vor der Veröffentlichung bitte rechtlich prüfen lassen.</p>
-  <h2>Verantwortlicher</h2>
+    body: `${draft}<h2>Verantwortlicher</h2>
   <p>${esc(o.company)}<br>${esc(o.person)}<br>${esc(o.street)}<br>${esc(o.city)}<br>E-Mail: <a href="mailto:${esc(o.email)}">${esc(o.email)}</a></p>
-  <h2>Hosting und Server-Logfiles</h2>
-  <p>Diese Website wird bei ${hosting} betrieben. Beim Aufruf einer Seite übermittelt Ihr Browser automatisch Informationen, die der Server in Logdateien speichert: IP-Adresse, Datum und Uhrzeit des Abrufs, aufgerufene Seite, Browser und Betriebssystem sowie die zuvor besuchte Seite. Diese Daten werden nur verarbeitet, um die Website sicher und stabil bereitzustellen (Art. 6 Abs. 1 lit. f DSGVO), und nicht mit anderen Daten zusammengeführt.</p>
+  <h2>Hosting</h2>
+  ${hostingText}
   <h2>Keine Cookies, kein Tracking</h2>
   <p>Diese Website setzt keine Cookies und verwendet keine Analyse- oder Tracking-Dienste. Schriftarten werden vom eigenen Server geladen. Es werden keine Daten an Dritte wie Google übertragen.</p>
   <h2>Ihre Rechte</h2>

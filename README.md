@@ -14,7 +14,7 @@ Jede Änderung auf dem Branch `main` wird automatisch gebaut und auf GitHub Page
 | Ordner/Datei | Inhalt |
 |---|---|
 | `data/fahrzeuge.json` | die Fahrzeuge: Texte, Kennzahlen, technische Daten, Farben, QR-Kürzel |
-| `data/site.json` | Betreiber (Impressum), Suchmaschinen-Sperre |
+| `data/site.json` | Domain, Betreiber (Impressum), Hosting (Datenschutz), Suchmaschinen-Sperre |
 | `src/styles.css` | Gestaltung aller Seiten |
 | `src/fonts/` | Schrift Archivo (selbst gehostet, Lizenz OFL) |
 | `build.mjs` | erzeugt die fertige Website |
@@ -42,7 +42,7 @@ Alle anderen Adressen (auch die Startseite `/`) zeigen eine kurze „Seite nicht
 
 ## QR-Codes
 
-Jeder Bierdeckel bekommt einen Kurzlink, der auf die Fahrzeugseite weiterleitet (Datei `dist/_redirects`, funktioniert bei Netlify und Cloudflare Pages, nicht bei GitHub Pages):
+Jeder Bierdeckel bekommt einen Kurzlink, der auf die Fahrzeugseite weiterleitet (Datei `dist/_redirects`, funktioniert bei Cloudflare, nicht bei GitHub Pages):
 
 | Kurzlink | Ziel |
 |---|---|
@@ -50,7 +50,11 @@ Jeder Bierdeckel bekommt einen Kurzlink, der auf die Fahrzeugseite weiterleitet 
 | `/q/a2` | `/a2-e-tron/` |
 | `/q/enyaq` | `/enyaq/` |
 
-Die QR-Codes werden erst erzeugt, wenn Domain und Hosting feststehen. Weiterleitungen sind bewusst `302` (vorübergehend), damit sich das Ziel später noch ändern lässt.
+Die fertigen QR-Codes liegen in `qr-codes/` (SVG und PDF für den Druck, PNG zur Ansicht). Sie zeigen auf `https://studiowanderer.com/q/…`
+(Domain in `data/site.json`). Neu erzeugen mit `pip install segno` und `python scripts/make-qr.py`.
+**Vor dem Druck jeden Code mit dem Handy testen**, sobald die Domain läuft.
+
+Weiterleitungen sind bewusst `302` (vorübergehend), damit sich das Ziel später noch ändern lässt.
 
 ## Neues Fahrzeug anlegen
 

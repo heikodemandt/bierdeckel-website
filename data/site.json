@@ -1,4 +1,5 @@
 {
+  "domain": "https://studiowanderer.com",
   "noindex": true,
   "operator": {
     "company": "Studio Wanderer",
@@ -9,5 +10,9 @@
     "phoneHref": "+4917645769191",
     "email": "ap240b@gmail.com"
   },
-  "hosting": null
+  "hosting": {
+    "name": "Cloudflare, Inc.",
+    "address": "101 Townsend St., San Francisco, CA 94107, USA",
+    "privacyUrl": "https://www.cloudflare.com/privacypolicy/"
+  }
 }
