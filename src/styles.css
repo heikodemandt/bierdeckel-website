@@ -525,12 +525,3 @@ body[data-scheme="light"] .hero__brand {
   color: var(--ink);
 }
 
-.legal__list {
-  margin-top: 12px;
-  padding-left: 1.2em;
-  list-style: disc;
-}
-
-.legal__list li + li {
-  margin-top: 6px;
-}

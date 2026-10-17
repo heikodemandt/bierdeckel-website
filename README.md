@@ -38,7 +38,7 @@ Benötigt nur Node.js.
 | `/enyaq/` | Škoda Enyaq |
 | `/impressum/`, `/datenschutz/` | Rechtliches (Betreiber: Studio Wanderer) |
 
-Alle anderen Adressen (auch die Startseite `/`) zeigen eine kurze „Seite nicht gefunden“-Seite mit Links zu den drei Fahrzeugen.
+Alle anderen Adressen (auch die Startseite `/`) zeigen eine kurze „Seite nicht gefunden“-Seite **ohne** Links zu den Fahrzeugen. Die Fahrzeugseiten sollen nur über die QR-Codes erreichbar sein.
 
 ## QR-Codes
 

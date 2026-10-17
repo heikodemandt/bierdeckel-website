@@ -196,16 +196,12 @@ function datenschutz(site) {
   });
 }
 
-function notFound(cars) {
-  const links = cars
-    .map((c) => `<li><a href="${u(`/${c.slug}/`)}">${esc(c.brand)} ${esc(c.model)}</a></li>`)
-    .join("\n    ");
+// Bewusst ohne Links zu den Fahrzeugen: Die Seiten sollen nur über die QR-Codes erreichbar sein.
+// Diese Seite erscheint auch unter der Startadresse /.
+function notFound() {
   return legalPage({
     title: "Seite nicht gefunden",
-    body: `<p>Diese Adresse gibt es nicht (mehr). Hier geht es zu den Fahrzeugen:</p>
-  <ul class="legal__list">
-    ${links}
-  </ul>`,
+    body: `<p>Unter dieser Adresse gibt es keine Seite. Die Fahrzeugseiten öffnen Sie über den QR-Code auf Ihrem Bierdeckel.</p>`,
   });
 }
 
@@ -233,7 +229,7 @@ async function build() {
   }
   await write("impressum/index.html", impressum(site));
   await write("datenschutz/index.html", datenschutz(site));
-  await write("404.html", notFound(cars));
+  await write("404.html", notFound());
   await write("_redirects", redirects.join("\n") + "\n");
 
   await cp(path.join(SRC, "styles.css"), path.join(DIST, "assets/styles.css"));
