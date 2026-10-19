@@ -165,7 +165,13 @@ function impressum(site) {
     body: `<h2>Angaben gemäß § 5 DDG</h2>
   <p>${esc(o.company)}<br>${esc(o.person)}<br>${esc(o.street)}<br>${esc(o.city)}</p>
   <h2>Kontakt</h2>
-  <p>Telefon: <a href="tel:${esc(o.phoneHref)}">${esc(o.phone)}</a><br>E-Mail: <a href="mailto:${esc(o.email)}">${esc(o.email)}</a></p>
+  <p>Telefon: <a href="tel:${esc(o.phoneHref)}">${esc(o.phone)}</a><br>E-Mail: <a href="mailto:${esc(o.email)}">${esc(o.email)}</a></p>${
+    o.vatId
+      ? `
+  <h2>Umsatzsteuer-ID</h2>
+  <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: ${esc(o.vatId)}</p>`
+      : ""
+  }
   <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
   <p>${esc(o.person)}, Anschrift wie oben</p>
   <h2>Hinweis zu den Fahrzeugangaben</h2>

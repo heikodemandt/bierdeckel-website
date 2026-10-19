@@ -8,7 +8,8 @@
     "city": "64625 Bensheim",
     "phone": "0176 45769191",
     "phoneHref": "+4917645769191",
-    "email": "ap240b@gmail.com"
+    "email": "ap240b@gmail.com",
+    "vatId": "DE111413556"
   },
   "hosting": {
     "name": "Cloudflare, Inc.",
