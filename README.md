@@ -6,8 +6,11 @@ Planung und Entscheidungen stehen in `PLANUNG.md` (nur lokal, nicht im Repositor
 
 ## Veröffentlichung
 
-Jede Änderung auf dem Branch `main` wird automatisch gebaut und auf GitHub Pages veröffentlicht
-(`.github/workflows/pages.yml`). Solange `"noindex": true` in `data/site.json` steht, tauchen die Seiten nicht in Suchmaschinen auf.
+Die Website läuft unter **https://studiowanderer.com** (auch `www.`) als Cloudflare Worker `bierdeckel-website`
+(Konfiguration: `wrangler.jsonc`). Jede Änderung auf dem Branch `main` wird von Cloudflare automatisch gebaut (`npm run build`)
+und nach ca. einer Minute veröffentlicht. DNS-Einträge und SSL-Zertifikat verwaltet Cloudflare selbst.
+
+Solange `"noindex": true` in `data/site.json` steht, tauchen die Seiten nicht in Suchmaschinen auf.
 
 ## Ordner
 
@@ -42,7 +45,7 @@ Alle anderen Adressen (auch die Startseite `/`) zeigen eine kurze „Seite nicht
 
 ## QR-Codes
 
-Jeder Bierdeckel bekommt einen Kurzlink, der auf die Fahrzeugseite weiterleitet (Datei `dist/_redirects`, funktioniert bei Cloudflare, nicht bei GitHub Pages):
+Jeder Bierdeckel bekommt einen Kurzlink, der auf die Fahrzeugseite weiterleitet (Datei `dist/_redirects`):
 
 | Kurzlink | Ziel |
 |---|---|
@@ -52,7 +55,8 @@ Jeder Bierdeckel bekommt einen Kurzlink, der auf die Fahrzeugseite weiterleitet 
 
 Die fertigen QR-Codes liegen in `qr-codes/` (SVG und PDF für den Druck, PNG zur Ansicht). Sie zeigen auf `https://studiowanderer.com/q/…`
 (Domain in `data/site.json`). Neu erzeugen mit `pip install segno` und `python scripts/make-qr.py`.
-**Vor dem Druck jeden Code mit dem Handy testen**, sobald die Domain läuft.
+Alle drei Codes wurden am 19.10.2026 ausgelesen und führen live auf die richtige Seite.
+**Vor dem Druck trotzdem jeden Code einmal mit dem Handy testen.**
 
 Weiterleitungen sind bewusst `302` (vorübergehend), damit sich das Ziel später noch ändern lässt.
 

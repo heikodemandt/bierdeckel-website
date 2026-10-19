@@ -9,7 +9,7 @@ const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(ROOT, "src");
 const DIST = path.join(ROOT, "dist");
 
-// Unterordner, falls die Seite nicht direkt unter der Domain liegt (GitHub Pages: BASE_PATH=/bierdeckel-website)
+// Unterordner, falls die Seite einmal nicht direkt unter der Domain liegt (z. B. BASE_PATH=/test); normalerweise leer
 const BASE = (process.env.BASE_PATH ?? "").replace(/\/+$/, "");
 const u = (p) => `${BASE}${p}`;
 
