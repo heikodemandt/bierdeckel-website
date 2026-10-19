@@ -6,5 +6,10 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page"
-  }
+  },
+  // Eigene Domain: Cloudflare legt DNS-Einträge und SSL-Zertifikate dafür automatisch an
+  "routes": [
+    { "pattern": "studiowanderer.com", "custom_domain": true },
+    { "pattern": "www.studiowanderer.com", "custom_domain": true }
+  ]
 }
